@@ -1,22 +1,24 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Routes
-import Dashboard from "./pages/Dashboard";
+import Dashboard, { dashboardLoader } from './pages/Dashboard';
+import Error from './pages/Error';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Dashboard />
+    path: '/',
+    element: <Dashboard />,
+    loader: dashboardLoader,
+    errorElement: <Error />,
   },
 ]);
 
 function App() {
-  return <div className="App">
+  return (
+    <div className='App'>
       <RouterProvider router={router} />
-    </div>;
+    </div>
+  );
 }
 
 export default App;
