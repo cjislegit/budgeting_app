@@ -17,7 +17,7 @@ const Nav = ({ userName }) => {
       {userName && (
         <Form
           method='post'
-          action='/logout'
+          action='logout'
           onSubmit={(event) => {
             if (!confirm('Delet user and all data?')) {
               event.preventDefault();
