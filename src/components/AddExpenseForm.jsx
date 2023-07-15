@@ -67,7 +67,11 @@ const AddExpenseForm = ({ budgets }) => {
             {budgets
               .sort((a, b) => a.createdAt - b.createdAt)
               .map((budget) => {
-                return <option key={budget.id}>{budget.name}</option>;
+                return (
+                  <option key={budget.id} value={budget.id}>
+                    {budget.name}
+                  </option>
+                );
               })}
           </select>
         </div>
